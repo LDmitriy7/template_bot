@@ -1,0 +1,20 @@
+# you must create 'env.toml' accordingly this example
+
+[Database]
+name = 'template_bot'
+#host = 'localhost'
+#port = 27017
+#username = 'root'
+#password = 'abc123'
+#auth_source = 'admin'
+
+[Bot]
+token = 'abc123'
+#skip_updates = false
+
+[Users]
+admins_ids = [0]
+
+[Log]
+#file = '.log'
+#level = 30
