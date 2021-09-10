@@ -1,7 +1,7 @@
 import argparse
 
 import mongoengine as me
-from aiogram import Bot, Dispatcher
+from aiogram import Bot, Dispatcher, types
 from aiogram.contrib.fsm_storage.mongo import MongoStorage
 
 import config
@@ -23,7 +23,7 @@ storage = MongoStorage(
     port=config.Database.PORT,
 )
 
-bot = Bot(config.Bot.TOKEN)
+bot = Bot(config.Bot.TOKEN, parse_mode=types.ParseMode.HTML)
 dp = Dispatcher(bot, storage=storage)
 
 arg_parser = argparse.ArgumentParser()
