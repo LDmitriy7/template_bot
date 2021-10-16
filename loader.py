@@ -1,5 +1,3 @@
-import argparse
-
 import mongoengine as me
 from aiogram import Bot, Dispatcher, types
 from aiogram.contrib.fsm_storage.mongo import MongoStorage
@@ -25,6 +23,3 @@ storage = MongoStorage(
 
 bot = Bot(config.Bot.TOKEN, parse_mode=types.ParseMode.HTML)
 dp = Dispatcher(bot, storage=storage)
-
-arg_parser = argparse.ArgumentParser()
-arg_parser.add_argument('-l', '--log-to-stdout', action='store_true')

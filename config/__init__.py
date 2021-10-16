@@ -1,2 +1,1 @@
-from .env import *
-from .static import *
+from .config import *

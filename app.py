@@ -4,7 +4,7 @@ from aiogram import executor
 
 import commands
 import config
-from loader import dp, arg_parser
+from loader import dp
 
 
 async def on_startup(_):
@@ -21,8 +21,6 @@ async def on_startup(_):
 
 
 if __name__ == '__main__':
-    args = arg_parser.parse_args()
-    filename = None if args.log_to_stdout else config.Log.FILE
-    logging.basicConfig(filename=filename, level=config.Log.LEVEL)
+    logging.basicConfig(filename=config.Log.FILE, level=config.Log.LEVEL)
 
     executor.start_polling(dp, on_startup=on_startup, skip_updates=config.Bot.SKIP_UPDATES)
