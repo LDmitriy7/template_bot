@@ -21,6 +21,6 @@ async def on_startup(_):
 
 
 if __name__ == '__main__':
-    logging.basicConfig(filename=config.Log.FILE, level=config.Log.LEVEL)
+    logging.basicConfig(filename=config.Log.file, level=config.Log.level)
 
-    executor.start_polling(dp, on_startup=on_startup, skip_updates=config.Bot.SKIP_UPDATES)
+    executor.start_polling(dp, on_startup=on_startup, skip_updates=config.Bot.skip_updates)

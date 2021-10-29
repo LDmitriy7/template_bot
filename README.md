@@ -1,1 +1,1 @@
-TODO: documentation
+1) You must create env.toml from env-sample.toml

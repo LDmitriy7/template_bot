@@ -1,0 +1,20 @@
+# Sample for 'env.toml'
+
+[Database]
+name = 'bot'
+#username = 'root'
+#password = ''
+#host = 'localhost'
+#port = 27017
+#auth_source = 'admin'
+
+[Bot]
+token = ''
+#skip_updates = true
+
+[Users]
+admins_ids = [724477101]
+
+[Log]
+#file = '.log'
+#level = 30

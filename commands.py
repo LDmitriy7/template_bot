@@ -23,6 +23,6 @@ ADMIN_COMMANDS = USER_COMMANDS + [
 async def setup():
     await dp.bot.set_my_commands(USER_COMMANDS)
 
-    for user_id in config.Users.ADMINS_IDS:
+    for user_id in config.Users.admins_ids:
         with suppress(TelegramAPIError):
             await dp.bot.set_my_commands(ADMIN_COMMANDS, scope=types.BotCommandScopeChat(user_id))

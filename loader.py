@@ -5,21 +5,21 @@ from aiogram.contrib.fsm_storage.mongo import MongoStorage
 import config
 
 me.connect(
-    db=config.Database.NAME,
-    username=config.Database.USERNAME,
-    password=config.Database.PASSWORD,
-    host=config.Database.HOST,
-    port=config.Database.PORT,
-    authentication_source=config.Database.AUTH_SOURCE,
+    db=config.Database.name,
+    username=config.Database.username,
+    password=config.Database.password,
+    host=config.Database.host,
+    port=config.Database.port,
+    authentication_source=config.Database.auth_source,
 )
 
 storage = MongoStorage(
-    db_name=config.Database.NAME,
-    username=config.Database.USERNAME,
-    password=config.Database.PASSWORD,
-    host=config.Database.HOST,
-    port=config.Database.PORT,
+    db_name=config.Database.name,
+    username=config.Database.username,
+    password=config.Database.password,
+    host=config.Database.host,
+    port=config.Database.port,
 )
 
-bot = Bot(config.Bot.TOKEN, parse_mode=types.ParseMode.HTML)
+bot = Bot(config.Bot.token, parse_mode=types.ParseMode.HTML)
 dp = Dispatcher(bot, storage=storage)
