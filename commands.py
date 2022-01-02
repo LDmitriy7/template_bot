@@ -9,14 +9,16 @@ from loader import dp
 START = 'start'
 CANCEL = 'cancel'
 BROADCAST = 'broadcast'
+SET_COMMANDS = 'set_commands'
 
 USER_COMMANDS = [
-    types.BotCommand(START, 'Запустить бота'),
+    # types.BotCommand(START, 'Запустить бота'),
+    # types.BotCommand(CANCEL, 'Отменить'),
 ]
 
 ADMIN_COMMANDS = USER_COMMANDS + [
-    types.BotCommand(CANCEL, 'Отменить'),
     types.BotCommand(BROADCAST, 'Рассылка'),
+    types.BotCommand(SET_COMMANDS, 'Обновить команды'),
 ]
 
 
