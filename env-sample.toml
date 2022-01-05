@@ -1,5 +1,3 @@
-# Sample for 'env.toml'
-
 [Database]
 name = 'bot'
 #username = 'root'
