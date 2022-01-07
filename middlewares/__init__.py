@@ -1,2 +1,6 @@
+from loader import dp
+from .answer_any_query import AnswerAnyQuery
+
+
 def setup():
-    pass
+    dp.setup_middleware(AnswerAnyQuery())
