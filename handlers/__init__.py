@@ -6,3 +6,5 @@ def setup():
 
     from . import for_admins
     for_admins.setup()
+
+    from . import misc
