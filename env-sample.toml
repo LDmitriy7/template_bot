@@ -14,5 +14,5 @@ name = 'Bot'
 admins_ids = [724477101]
 
 [Log]
-#file = '.log'
+file = 'main.log'
 #level = 30

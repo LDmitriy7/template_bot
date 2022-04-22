@@ -1,3 +1,5 @@
+import logging
+
 import mongoengine as me
 from aiogram import Bot, Dispatcher, types
 from aiogram.contrib.fsm_storage.mongo import MongoStorage
@@ -23,3 +25,10 @@ storage = MongoStorage(
 
 bot = Bot(config.Bot.token, parse_mode=types.ParseMode.HTML)
 dp = Dispatcher(bot, storage=storage)
+
+logging.basicConfig(level=config.Log.level)
+
+log = logging.getLogger()
+log.addHandler(
+    logging.FileHandler(config.Log.file, 'w')
+)
