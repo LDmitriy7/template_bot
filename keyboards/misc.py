@@ -4,7 +4,7 @@ from aiogram_utils.keyboards import InlineKeyboardButton
 
 class Test(InlineKeyboardMarkup):
     GREETING = InlineKeyboardButton('Привет, я {user_name}', callback_data='test:say_hello:{user_name}')
-    DEVELOPER_LINK = InlineKeyboardButton('Разработчик шаблона', url='https://t.me/LDmitriy1998')
+    DEVELOPER_LINK = InlineKeyboardButton('Разработчик шаблона', url='https://t.me/Dmitriy7244')
 
     def __init__(self, user_name: str):
         super().__init__(row_width=1)
