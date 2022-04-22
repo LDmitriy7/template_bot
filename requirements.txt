@@ -1,5 +1,5 @@
 aiogram==2.18
-aiogram-utils==0.0.7
+aiogram-utils==0.0.10
 aiohttp==3.8.1
 aiosignal==1.2.0
 async-timeout==4.0.2
