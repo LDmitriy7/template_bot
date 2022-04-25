@@ -1,2 +1,7 @@
+from loader import tm
+
+
 def setup():
-    pass
+    from . import misc
+
+    tm.create_tasks()

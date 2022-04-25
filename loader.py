@@ -3,6 +3,7 @@ import logging
 import mongoengine as me
 from aiogram import Bot, Dispatcher, types
 from aiogram.contrib.fsm_storage.mongo import MongoStorage
+from aiogram_utils.task_manager import TaskManager
 
 import config
 
@@ -26,9 +27,14 @@ storage = MongoStorage(
 bot = Bot(config.Bot.token, parse_mode=types.ParseMode.HTML)
 dp = Dispatcher(bot, storage=storage)
 
-logging.basicConfig(level=config.Log.level)
+logging.basicConfig(
+    level=config.Log.level,
+    handlers=[
+        logging.StreamHandler(),
+        logging.FileHandler(config.Log.file, 'w')
+    ]
+)
 
 log = logging.getLogger()
-log.addHandler(
-    logging.FileHandler(config.Log.file, 'w')
-)
+
+tm = TaskManager()

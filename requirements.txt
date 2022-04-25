@@ -1,5 +1,5 @@
-aiogram==2.18
-aiogram-utils==0.0.10
+aiogram==2.20
+aiogram-utils==0.0.13
 aiohttp==3.8.1
 aiosignal==1.2.0
 async-timeout==4.0.2
@@ -10,7 +10,7 @@ chardet==4.0.0
 charset-normalizer==2.0.9
 frozenlist==1.2.0
 idna==3.3
-mongoengine==0.23.1
+mongoengine==0.24.1
 motor==2.5.1
 multidict==5.2.0
 pymongo==3.12.0
