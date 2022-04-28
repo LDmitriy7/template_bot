@@ -1,2 +1,3 @@
 1) You must create env.toml from env-sample.toml
-2) Now you can run app.py
+2) docker build -t template_bot .
+3) docker run --network=host -d template_bot
