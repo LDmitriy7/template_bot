@@ -3,7 +3,7 @@ token = ''
 #skip_updates = true
 
 [Database]
-name = 'Bot'
+name = 'TestBot'
 #username = 'root'
 #password = ''
 #host = 'localhost'
