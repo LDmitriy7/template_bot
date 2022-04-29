@@ -1,6 +1,6 @@
 import toml
 
-_env = toml.load('env.toml')
+_env = toml.load('secrets/env.toml')
 
 
 class Bot:
@@ -14,11 +14,7 @@ class Database:
     _data = _env['Database']
 
     name = _data['name']
-    username = _data.get('username')
-    password = _data.get('password')
     host = _data.get('host', 'localhost')
-    port = _data.get('port', 27017)
-    auth_source = _data.get('auth_source', 'admin')
 
 
 class Users:

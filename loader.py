@@ -9,22 +9,15 @@ import config
 
 me.connect(
     db=config.Database.name,
-    username=config.Database.username,
-    password=config.Database.password,
     host=config.Database.host,
-    port=config.Database.port,
-    authentication_source=config.Database.auth_source,
 )
 
 storage = MongoStorage(
     db_name=config.Database.name,
-    username=config.Database.username,
-    password=config.Database.password,
     host=config.Database.host,
-    port=config.Database.port,
 )
 
-bot = Bot(config.Bot.token, parse_mode=types.ParseMode.HTML)
+bot = Bot(config.Bot.token, parse_mode=types.ParseMode.HTML, disable_web_page_preview=True)
 dp = Dispatcher(bot, storage=storage)
 
 logging.basicConfig(
