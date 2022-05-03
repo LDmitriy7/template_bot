@@ -18,6 +18,9 @@ storage = MongoStorage(
 )
 
 bot = Bot(config.Bot.token, parse_mode=types.ParseMode.HTML, disable_web_page_preview=True)
+bot2 = Bot(config.Bot.token2, parse_mode=types.ParseMode.HTML, disable_web_page_preview=True)
+bot3 = Bot(config.Bot.token3, parse_mode=types.ParseMode.HTML, disable_web_page_preview=True)
+
 dp = Dispatcher(bot, storage=storage)
 
 logging.basicConfig(
