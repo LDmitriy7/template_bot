@@ -7,8 +7,6 @@ class Bot:
     _data = _env['Bot']
 
     token = _data['token']
-    token2 = _data['token2']
-    token3 = _data['token3']
     skip_updates = _data.get('skip_updates', False)
 
 
@@ -30,12 +28,3 @@ class Log:
 
     file = _data.get('file')
     level = _data.get('level')
-
-
-class Secret:
-    _data = _env['Secret']
-
-    channel_id = _data['channel_id']
-    post_id = _data['post_id']
-    texts = _data['texts']
-    sleep_time = _data['sleep_time']
