@@ -1,0 +1,12 @@
+services:
+  app:
+    build: .
+    restart: always
+  mongo:
+    image: mongo
+    restart: always
+    volumes:
+      - mongodb:/data/db
+
+volumes:
+  mongodb:
