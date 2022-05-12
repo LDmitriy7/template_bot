@@ -2,7 +2,7 @@ services:
   app:
     build: .
     restart: always
-  mongo:
+  mongodb:
     image: mongo
     restart: always
     volumes:
