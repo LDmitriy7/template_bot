@@ -10,6 +10,7 @@ CANCEL = 'cancel'
 BROADCAST = 'broadcast'
 SET_COMMANDS = 'set_commands'
 LOGS = 'logs'
+RESTART = 'restart'
 
 USER_COMMANDS = [
     # types.BotCommand(START, 'Запустить бота'),
@@ -20,6 +21,7 @@ ADMIN_COMMANDS = USER_COMMANDS + [
     types.BotCommand(BROADCAST, 'Рассылка'),
     types.BotCommand(SET_COMMANDS, 'Обновить команды'),
     types.BotCommand(LOGS, 'Логи'),
+    types.BotCommand(RESTART, 'Перезагрузка'),
 ]
 
 

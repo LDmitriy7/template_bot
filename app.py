@@ -1,6 +1,7 @@
 from aiogram import executor
 
 import commands
+import config
 from loader import dp
 
 
@@ -15,6 +16,7 @@ async def on_startup(_):
     middlewares.setup()
     tasks.setup()
     await commands.setup()
+    await dp.bot.send_message(config.admins.owner_id, 'Бот запущен...')
 
 
 if __name__ == '__main__':

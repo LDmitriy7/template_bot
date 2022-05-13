@@ -34,11 +34,11 @@ class _Database:
 
     @property
     def name(self):
-        return _get_env('DATABASE_NAME', 'TemplateBot')
+        return _get_env('DATABASE_NAME', required=True)
 
     @property
     def host(self):
-        return _get_env('DATABASE_HOST', 'localhost')
+        return _get_env('DATABASE_HOST', required=True)
 
 
 db = _Database()

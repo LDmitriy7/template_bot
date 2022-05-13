@@ -3,10 +3,10 @@ services:
     build: .
     restart: always
     environment:
-      - BOT_TOKEN=''
+      - BOT_TOKEN=
       - OWNER_ID=724477101
-  #      - DATABASE_NAME='TemplateBot'
-  #      - DATABASE_HOST='localhost'
+      - DATABASE_HOST=localhost
+      - DATABASE_NAME=TemplateBot
   mongodb:
     image: mongo
     restart: always
