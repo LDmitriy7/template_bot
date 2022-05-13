@@ -5,7 +5,7 @@ services:
     environment:
       - BOT_TOKEN=
       - OWNER_ID=724477101
-      - DATABASE_HOST=localhost
+      - DATABASE_HOST=mongodb
       - DATABASE_NAME=TemplateBot
   mongodb:
     image: mongo
