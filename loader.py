@@ -8,23 +8,23 @@ from aiogram_utils.task_manager import TaskManager
 import config
 
 me.connect(
-    db=config.Database.name,
-    host=config.Database.host,
+    db=config.db.name,
+    host=config.db.host,
 )
 
 storage = MongoStorage(
-    db_name=config.Database.name,
-    host=config.Database.host,
+    db_name=config.db.name,
+    host=config.db.host,
 )
 
-bot = Bot(config.Bot.token, parse_mode=types.ParseMode.HTML, disable_web_page_preview=True)
+bot = Bot(config.bot.token, parse_mode=types.ParseMode.HTML, disable_web_page_preview=True)
 dp = Dispatcher(bot, storage=storage)
 
 logging.basicConfig(
-    level=config.Log.level,
+    level=config.log.level,
     handlers=[
         logging.StreamHandler(),
-        logging.FileHandler(config.Log.file, 'w')
+        logging.FileHandler(config.log.file, 'w')
     ]
 )
 

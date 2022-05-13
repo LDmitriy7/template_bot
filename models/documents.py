@@ -4,6 +4,7 @@ import mongoengine as me
 from aiogram_utils.mongoengine import Document
 
 
-class Test(Document):
-    a: str = me.StringField()
-    b: int = me.IntField()
+class Config(Document):
+    admins_ids: list[int] = me.ListField(me.IntField())
+    log_file: str = me.StringField()
+    log_level: int = me.IntField()

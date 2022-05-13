@@ -1,12 +1,15 @@
 from aiogram import types
+from aiogram.utils.exceptions import TelegramAPIError
 
 import commands
 import config
-import texts
 from loader import dp
 
 
-@dp.message_handler(commands=commands.LOGS, user_id=config.Users.admins_ids)
+@dp.message_handler(commands=commands.LOGS, user_id=config.admins.ids)
 async def logs(msg: types.Message):
-    document = types.InputFile(config.Log.file, filename='logs.txt')
-    await msg.answer_document(document)
+    document = types.InputFile(config.log.file, filename='logs.txt')
+    try:
+        await msg.answer_document(document)
+    except TelegramAPIError:
+        await msg.answer('Файл пустой')

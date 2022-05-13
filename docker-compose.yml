@@ -2,6 +2,11 @@ services:
   app:
     build: .
     restart: always
+    environment:
+      - BOT_TOKEN=''
+      - OWNER_ID=724477101
+  #      - DATABASE_NAME='TemplateBot'
+  #      - DATABASE_HOST='localhost'
   mongodb:
     image: mongo
     restart: always

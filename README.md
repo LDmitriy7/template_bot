@@ -1,2 +1,2 @@
-1) create secrets/env.yml from secrets/env.sample.yml
+1) Replace environment variables in docker-compose.yml
 2) docker compose up -d

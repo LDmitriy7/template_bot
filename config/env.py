@@ -1,31 +1,76 @@
-import yaml
+import os
 
-_file = open('secrets/env.yml')
-_env = yaml.load(_file, yaml.Loader)
+from dotenv import load_dotenv
 
+from models import documents
 
-class Bot:
-    _data = _env['bot']
-
-    token = _data['token']
-    skip_updates = _data.get('skip_updates', False)
+load_dotenv()
 
 
-class Database:
-    _data = _env['database']
-
-    name = _data['name']
-    host = _data.get('host', 'localhost')
-
-
-class Users:
-    _data = _env['users']
-
-    admins_ids = _data['admins_ids']
+def _get_env(key: str, default=None, required=False):
+    value = os.getenv(key, default)
+    if required and value is None:
+        print(f'You must set env ${key}')
+        exit(1)
+    return value
 
 
-class Log:
-    _data = _env['log']
+def _get_config():
+    config = documents.Config.object() or documents.Config().save()
+    return config
 
-    file = _data.get('file')
-    level = _data.get('level')
+
+class _Bot:
+
+    @property
+    def token(self):
+        return _get_env('BOT_TOKEN', required=True)
+
+
+bot = _Bot()
+
+
+class _Database:
+
+    @property
+    def name(self):
+        return _get_env('DATABASE_NAME', 'TemplateBot')
+
+    @property
+    def host(self):
+        return _get_env('DATABASE_HOST', 'localhost')
+
+
+db = _Database()
+
+
+class _Admins:
+
+    @property
+    def owner_id(self):
+        value = _get_env('OWNER_ID', required=True)
+        return int(value)
+
+    @property
+    def ids(self):
+        config = _get_config()
+        return config.admins_ids
+
+
+admins = _Admins()
+
+
+class _Log:
+
+    @property
+    def file(self):
+        config = _get_config()
+        return config.log_file or 'main.log'
+
+    @property
+    def level(self):
+        config = _get_config()
+        return config.log_level
+
+
+log = _Log()
