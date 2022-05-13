@@ -16,6 +16,9 @@ async def _(msg: types.Message):
 async def restart(msg: types.Message):
     await msg.answer('Остановка бота...')
 
-    dp.stop_polling()
-    await dp.wait_closed()
-    asyncio.get_event_loop().stop()
+    async def _exit():
+        dp.stop_polling()
+        await dp.wait_closed()
+        asyncio.get_event_loop().stop()
+
+    asyncio.create_task(_exit())
