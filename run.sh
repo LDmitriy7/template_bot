@@ -1,4 +1,7 @@
-python3 -m pip -q install poetry pyyaml
+sudo apt-get update
+sudo apt-get install docker-ce docker-ce-cli containerd.io docker-compose-plugin
+
+python3 -m pip install poetry pyyaml
 
 poetry export -o requirements.txt --without-hashes
 
