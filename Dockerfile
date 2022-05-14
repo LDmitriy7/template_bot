@@ -4,6 +4,6 @@ WORKDIR /app
 
 COPY . .
 
-RUN pip install poetry && poetry config virtualenvs.create false && poetry install
+RUN pip install -r requirements.txt
 
 CMD ["python", "app.py"]
