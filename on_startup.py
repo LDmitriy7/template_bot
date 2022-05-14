@@ -1,5 +1,7 @@
 import yaml
 
+print('You should set environment variables\n')
+
 fp = 'docker-compose.yml'
 file = open(fp, mode='r')
 
