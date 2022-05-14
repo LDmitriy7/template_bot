@@ -23,3 +23,5 @@ app['environment'] = environment_new
 file = open(fp, mode='w')
 
 yaml.dump(content, file, yaml.Dumper)
+
+print('Starting docker...\n')
