@@ -1,6 +1,11 @@
 import yaml
 
-print('You should set environment variables\n')
+guide_text = """
+You should set environment variables.
+You can skip any variable, it will be taken from "[]"
+"""
+
+print(guide_text)
 
 fp = 'docker-compose.yml'
 file = open(fp, mode='r')
@@ -24,4 +29,8 @@ file = open(fp, mode='w')
 
 yaml.dump(content, file, yaml.Dumper)
 
-print('\nStarting docker...\n')
+end_text = """
+Starting docker...
+"""
+
+print(end_text)
