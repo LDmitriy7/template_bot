@@ -1,6 +1,6 @@
-from loader import dp
-import aiogram_utils.filters
+import aiogram_utils
+from aiogram import Dispatcher
 
 
-def setup():
+def setup(dp: Dispatcher):
     aiogram_utils.filters.setup(dp)

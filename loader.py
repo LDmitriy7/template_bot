@@ -5,6 +5,7 @@ from aiogram import Bot, Dispatcher, types
 from aiogram.contrib.fsm_storage.mongo import MongoStorage
 from aiogram_utils.task_manager import TaskManager
 
+import api.config
 import config
 
 me.connect(

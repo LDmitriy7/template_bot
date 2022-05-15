@@ -1,16 +1,12 @@
 services:
   app:
     build: .
-    environment:
-    - BOT_TOKEN=
-    - OWNER_ID=724477101
-    - DATABASE_HOST=mongodb
-    - DATABASE_NAME=TemplateBot
+    env_file: .env
     restart: always
   mongodb:
     image: mongo
     restart: always
     volumes:
-    - mongodb:/data/db
+      - mongodb:/data/db
 volumes:
   mongodb: null

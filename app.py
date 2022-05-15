@@ -11,9 +11,9 @@ async def on_startup(_):
     import middlewares
     import tasks
 
-    filters.setup()
+    filters.setup(dp)
     handlers.setup()
-    middlewares.setup()
+    middlewares.setup(dp)
     tasks.setup()
     await commands.setup()
     await dp.bot.send_message(config.admins.owner_id, 'Бот запущен...')

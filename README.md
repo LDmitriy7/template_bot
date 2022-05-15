@@ -1,6 +1,6 @@
 # Requires
 
-- python 3.10
+- python3
 - poetry
 - docker
 

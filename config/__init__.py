@@ -1,2 +1,2 @@
-from .env import *
+from .variable import *
 from .static import *
