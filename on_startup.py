@@ -2,7 +2,7 @@ DEFAULT_ENV = {
     'BOT_TOKEN': '',
     'OWNER_ID': 724477101,
     'DATABASE_NAME': 'TemplateBot',
-    'DATABASE_HOST': 'localhost',
+    'DATABASE_HOST': 'mongodb',
 }
 
 GUIDE_TEXT = """
