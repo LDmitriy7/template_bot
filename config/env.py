@@ -65,7 +65,7 @@ class _Log:
     @property
     def file(self):
         config = _get_config()
-        return config.log_file or 'main.log'
+        return config.log_file or '.log'
 
     @property
     def level(self):
